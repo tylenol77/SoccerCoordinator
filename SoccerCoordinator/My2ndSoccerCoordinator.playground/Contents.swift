@@ -1,7 +1,17 @@
-//: Second Version
+//: Playground - noun: a place where people can play
 
 import UIKit
+// Player's data
+//
+//  main.swift
+//  Test
+//
+//  Created by mac on 2017/4/25.
+//  Copyright © 2017年 James. All rights reserved.
+//
 
+import Foundation
+// Create player data
 var player1 = ["name": "Joe Smith", "height": 42, "experienced": true, "guardian": "Jim and Jan Smith"] as [String : Any]
 var player2 = ["name": "Jill Tanner", "height": 36, "experienced": true, "guardian": "Ciara Tanner"] as [String : Any]
 var player3 = ["name": "Bill Bon", "height": 43, "experienced": true, "guardian": "Sara and Jenny Bon"] as [String : Any]
@@ -20,99 +30,82 @@ var player15 = ["name": "Arnoid Willis", "height": 43, "experienced": false, "gu
 var player16 = ["name": "Phillip Helm", "height": 44, "experienced": true, "guardian": "Thomas Helm and Eva Jones"] as [String : Any]
 var player17 = ["name": "Les Clay", "height": 42, "experienced": true, "guardian": "Wynonna Brown"] as [String : Any]
 var player18 = ["name": "Herschel Krustofski", "height": 45, "experienced": true, "guardian": "Hyman and Rachel Krustofski"] as [String : Any]
-let playerNumber = 18
-var playerArray: [[String: Any]] = [player1,player2,player3,player4,player5,player6,player7,player8,player9,player10,player11,player12,player13,player14,player15,player16,player17,player18]
-var isExperiencedPlayer = 0
-var averageExperiencedPlayers = 0
-for player in playerArray {
-    if (player["experienced"]! as! Bool != false) {
-        isExperiencedPlayer += 1
-    }
-}
-averageExperiencedPlayers = isExperiencedPlayer / 3
-var DragonsExpPlayer = 0
-var everyTeamPlayer = playerNumber / 3
-var DragonsAllPlayer = 0
-var DragonsPlayersArray: [[String: Any]] = []
-var SharksExpPlayer = 0
-var SharksAllPlayer = 0
-var SharksPlayersArray: [[String: Any]] = []
-var RaptorsExpPlayer = 0
-var RaptorsAllPlayer = 0
-var RaptorsPlayersArray: [[String: Any]] = []
 
-for playerIndex in 0..<playerArray.count {
-    if (DragonsExpPlayer < averageExperiencedPlayers && playerArray[playerIndex]["experienced"]! as! Bool == true) {
-        DragonsPlayersArray.append(playerArray[playerIndex])
-        
-        DragonsExpPlayer += 1
-        DragonsAllPlayer += 1
-    }else if (SharksExpPlayer < averageExperiencedPlayers && playerArray[playerIndex]["experienced"]! as! Bool == true) {
-        SharksPlayersArray.append(playerArray[playerIndex])
-        SharksExpPlayer += 1
-        SharksAllPlayer += 1
-    }else if (RaptorsExpPlayer < averageExperiencedPlayers && playerArray[playerIndex]["experienced"]! as! Bool == true) {
-        RaptorsPlayersArray.append(playerArray[playerIndex])
-        RaptorsExpPlayer += 1
-        RaptorsAllPlayer += 1
-    }
-    if (DragonsAllPlayer < everyTeamPlayer && playerArray[playerIndex]["experienced"]! as! Bool == false) {
-        DragonsPlayersArray.append(playerArray[playerIndex])
-        DragonsAllPlayer += 1
-    } else if (SharksAllPlayer < everyTeamPlayer && playerArray[playerIndex]["experienced"]! as! Bool == false) {
-        SharksPlayersArray.append(playerArray[playerIndex])
-        SharksAllPlayer += 1
-    } else if (RaptorsAllPlayer < everyTeamPlayer && playerArray[playerIndex]["experienced"]! as! Bool == false) {
-        RaptorsPlayersArray.append(playerArray[playerIndex])
-        RaptorsAllPlayer += 1
+// Create an array store all the player's infomation
+var allPlayer: [[String: Any]] = [player1,player2,player3,player4,player5,player6,player7,player8,player9,player10,player11,player12,player13,player14,player15,player16,player17,player18]
+
+// create team's number
+let teamNo = 3
+
+// Create two array to store the player has experience and not have experience
+var hasExperiencedPlayer: [[String: Any]] = []
+var hasExperiencedPlayerGroupOne: [[String: Any]] = []
+var hasExperiencedPlayerGroupTwo: [[String: Any]] = []
+var hasExperiencedPlayerGroupThree: [[String: Any]] = []
+var hasNoExperiencedPlayer: [[String: Any]] = []
+var hasNoExperiencedPlayerGroupOne: [[String: Any]] = []
+var hasNoExperiencedPlayerGroupTwo: [[String: Any]] = []
+var hasNoExperiencedPlayerGroupThree: [[String: Any]] = []
+// Divide player into two group
+for player in allPlayer {
+    if ((player["experienced"]!) as! Bool == true) {
+        hasExperiencedPlayer.append(player)
+    }else {
+        hasNoExperiencedPlayer.append(player)
     }
 }
-for dragonsPlayer in DragonsPlayersArray {
+// create each team's player count
+var sharksTeamPlayerNo = 0
+var dragonsTeamPlayerNo = 0
+var raptorsTeamPlayerNo = 0
+// create each team array
+var sharksTeam: [[String: Any]] = []
+var dragonsTeam: [[String: Any]] = []
+var raptorsTeam: [[String: Any]] = []
+// assign hasExperiencedPlayer to each team
+for var index in 0..<hasExperiencedPlayer.count {
+    if index < hasExperiencedPlayer.count / teamNo {
+        sharksTeam.append(hasExperiencedPlayer[index])
+    }else if index < hasExperiencedPlayer.count / teamNo + teamNo {
+        dragonsTeam.append(hasExperiencedPlayer[index])
+    }else if index < hasExperiencedPlayer.count / teamNo + teamNo + teamNo {
+        raptorsTeam.append(hasExperiencedPlayer[index])
+    }
+}
+// assign hasNoExperiencedPlayer to each team
+for var index in 0..<hasNoExperiencedPlayer.count {
+    if index < hasNoExperiencedPlayer.count / teamNo {
+        sharksTeam.append(hasNoExperiencedPlayer[index])
+    }else if index < hasNoExperiencedPlayer.count / teamNo + teamNo {
+        dragonsTeam.append(hasNoExperiencedPlayer[index])
+    }else if index < hasNoExperiencedPlayer.count / teamNo + teamNo + teamNo {
+        raptorsTeam.append(hasNoExperiencedPlayer[index])
+    }
+}
+// print dragonsPlayer info
+for dragonsPlayer in dragonsTeam {
     print("To ", terminator: "")
     print(dragonsPlayer["guardian"]!)
     print(dragonsPlayer["name"]!, terminator: "")
     print("is in team Dragons - practice on March 17, 1pm ")
-    print("has experienced: ", terminator: "")
-    print(dragonsPlayer["experienced"]!)
+    
 }
-for sharksPlayer in SharksPlayersArray {
+// print sharksPlayer info
+for sharksPlayer in sharksTeam {
     print("To ", terminator: "")
     print(sharksPlayer["guardian"]!)
     print(sharksPlayer["name"]!, terminator: "")
     print("is in team Sharks - practice on March 17, 3pm ")
-    print("has experienced: ", terminator: "")
-    print(sharksPlayer["experienced"]!)
+    
 }
-for raptorsPlayer in RaptorsPlayersArray {
+// print raptorsPlayer info
+for raptorsPlayer in raptorsTeam {
     print("To ", terminator: "")
     print(raptorsPlayer["guardian"]!)
     print(raptorsPlayer["name"]!, terminator: "")
     print("is in team Raptors - practice on March 18, 1pm ")
-    print("has experienced: ", terminator: "")
-    print(raptorsPlayer["experienced"]!)
+    
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

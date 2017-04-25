@@ -15,7 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2D9F63781EA4F5C8008E5D1C /* SoccerCoordinator.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = SoccerCoordinator.playground; sourceTree = "<group>"; };
+		046A10451EA75F5A00B019D1 /* My2ndSoccerCoordinator.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = My2ndSoccerCoordinator.playground; sourceTree = "<group>"; };
 		5D4E6A531CAAF5EB00EE3B88 /* SoccerCoordinator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoccerCoordinator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D4E6A561CAAF5EB00EE3B88 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5D4E6A581CAAF5EB00EE3B88 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -61,7 +61,7 @@
 				5D4E6A5D1CAAF5EB00EE3B88 /* Assets.xcassets */,
 				5D4E6A5F1CAAF5EB00EE3B88 /* LaunchScreen.storyboard */,
 				5D4E6A621CAAF5EB00EE3B88 /* Info.plist */,
-				2D9F63781EA4F5C8008E5D1C /* SoccerCoordinator.playground */,
+				046A10451EA75F5A00B019D1 /* My2ndSoccerCoordinator.playground */,
 			);
 			path = SoccerCoordinator;
 			sourceTree = "<group>";
@@ -98,6 +98,7 @@
 				TargetAttributes = {
 					5D4E6A521CAAF5EB00EE3B88 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = R37NMAX6H9;
 						LastSwiftMigration = 0830;
 					};
 				};
@@ -257,9 +258,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = R37NMAX6H9;
 				INFOPLIST_FILE = SoccerCoordinator/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.yourname.SoccerCoordinator;
+				PRODUCT_BUNDLE_IDENTIFIER = SoccerCoordinator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -269,9 +272,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = R37NMAX6H9;
 				INFOPLIST_FILE = SoccerCoordinator/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.yourname.SoccerCoordinator;
+				PRODUCT_BUNDLE_IDENTIFIER = SoccerCoordinator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
